@@ -20,7 +20,7 @@ func shuffle(ctx *cli.Context) (err error) {
 		AppName: ctx.App.Name,
 		Version: ctx.App.Version,
 		Deck:    cards.StandardDeck(),
-	}).GameShuffle()
+	}).ShuffleAndLogDeck()
 }
 
 // ShuffleCommand starts the application.

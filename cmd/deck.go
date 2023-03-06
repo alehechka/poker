@@ -20,7 +20,7 @@ func deck(ctx *cli.Context) (err error) {
 		AppName: ctx.App.Name,
 		Version: ctx.App.Version,
 		Deck:    cards.StandardDeck(),
-	}).Log()
+	}).LogDeck()
 
 	return nil
 }

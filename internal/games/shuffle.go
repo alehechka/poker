@@ -2,12 +2,12 @@ package games
 
 import "github.com/sirupsen/logrus"
 
-// Shuffle starts the shuffle application
-func (p *PokerHandler) GameShuffle() error {
+// ShuffleAndLogDeck starts the shuffle application
+func (p *PokerHandler) ShuffleAndLogDeck() error {
 	logrus.Debug("shuffling...")
 
 	p.ShuffleDeck()
 
-	p.config.Deck.Log()
+	p.LogDeck()
 	return nil
 }

@@ -21,11 +21,17 @@ func Init(config *Config) *PokerHandler {
 	}
 }
 
-func (p *PokerHandler) Log() {
+func (p *PokerHandler) LogDeck() {
 	p.config.Deck.Log()
 }
 
 func (p *PokerHandler) ShuffleDeck() {
 	shuffled := p.config.Deck.Shuffle()
 	p.config.Deck = shuffled
+}
+
+func (p *PokerHandler) DealCard(indexes ...int) cards.Card {
+	dealt, card := p.config.Deck.DealCard(indexes...)
+	p.config.Deck = dealt
+	return card
 }
